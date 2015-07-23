@@ -108,9 +108,6 @@ a:visited {
 
 .page-head {
     line-height: 1.846153846;
-}
-
-.page-head > a {
     color: #515151;
     display: inline-block;
     text-decoration: none;
@@ -183,9 +180,9 @@ a:visited {
     display: inline-block;
 }
 
-.projects {
+/*.projects {
     padding-left: 30px;
-}
+}*/
 
 .project-detail {
     padding: 15px 5px 0;
