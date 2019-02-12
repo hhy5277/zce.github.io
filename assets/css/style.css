@@ -17,7 +17,7 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
-  background: #454d5d 50% url(https://img.zce.me/cover/01.jpg);
+  background: #454d5d 50% url(https://picsum.photos/1024/768/?random&blur);
   background-size: cover;
   justify-content: center;
   -webkit-font-smoothing: antialiased;
