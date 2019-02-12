@@ -2,98 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0;url=https://zce.me">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
   <title>Hey Bitch, I'm Lei Wang</title>
-  <style>
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-    }
-    body {
-      font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, Arial, sans-serif;
-
-      display: flex;
-      flex-direction: column;
-
-      text-align: center;
-
-      background: #454d5d 50% url(https://img.zce.me/cover/01.jpg);
-      background-size: cover;
-
-      justify-content: center;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    .logo {
-      max-height: 12.5rem;
-      margin: 0 0 4rem;
-    }
-    .title {
-      font-size: 4rem;
-      font-weight: 100;
-
-      margin: 0 0 2rem;
-
-      color: #fff;
-      text-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.8);
-    }
-    .description {
-      font-size: 2rem;
-      font-weight: 100;
-
-      margin: 0 0 2rem;
-
-      color: #eee;
-      text-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.6);
-    }
-    .nav {
-      font-size: 1.5rem;
-      font-weight: 300;
-      line-height: 2;
-
-      display: flex;
-
-      margin: 0;
-      padding: 0;
-
-      list-style: none;
-
-      justify-content: center;
-    }
-    .nav li + li::before {
-      margin: 0.5rem;
-
-      content: "·";
-
-      color: #aaa;
-    }
-    .nav a {
-      transition: color 0.5s, text-shadow 0.5s;
-      text-decoration: none;
-
-      color: #99e9f2;
-    }
-    .nav a:hover {
-      color: #22b8cf;
-      text-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.5);
-    }
-    .nav a:focus {
-      color: #3bc9db;
-      outline: 0;
-      text-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.5);
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <img class="logo" src="https://img.zce.me/logo.svg" alt="zce.me">
+  <!-- <img class="logo" src="https://img.zce.me/logo.svg" alt="zce.me"> -->
+  <svg class="logo" viewBox="0 0 472 450" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="shadow-filter" x="-12.7%" y="-13.4%" width="125.4%" height="126.7%" filterUnits="objectBoundingBox">
+        <feOffset dx="0" dy="0" in="SourceAlpha" result="offset-outer"></feOffset>
+        <feGaussianBlur stdDeviation="20" in="offset-outer" result="blue-outer"></feGaussianBlur>
+        <feComposite in="blue-outer" in2="SourceAlpha" operator="out" result="blue-outer"></feComposite>
+        <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 1 0" type="matrix" in="blue-outer"></feColorMatrix>
+      </filter>
+    </defs>
+    <mask id="mask" fill="white">
+      <polygon points="472 114.26 203.028853 335.74 407.1 335.74 472 449.48 64.9 449.48 0 335.74 268.971147 114.26 64.9 114.26 0 0.52 407.1 0.52"></polygon>
+    </mask>
+    <g id="background" mask="url(#mask)" fill="#339AF0">
+      <rect x="0" y="0" width="472" height="449"></rect>
+    </g>
+    <g id="shadow" mask="url(#mask)">
+      <polygon points="0 335.74 64.9 449.48 472 114.26 407.1 0.52" filter="url(#shadow-filter)"></polygon>
+    </g>
+  </svg>
   <h1 class="title">Hey! Bitch</h1>
   <p class="description">I'm Lei Wang, a poet of China</p>
   <ul class="nav">
-    <li><a href="https://blog.zce.me">Blog</a></li>
-    <li><a href="https://github.com/zce">GitHub</a></li>
+    <li><a href="https://weibo.com/zceme" target="_blank">Weibo</a></li>
+    <li><a href="https://img.zce.me/wechat.jpg" target="_blank">WeChat</a></li>
+    <li><a href="https://blog.zce.me" target="_blank">Blog</a></li>
+    <li><a href="https://github.com/zce" target="_blank">GitHub</a></li>
+    <li><a href="mailto:w@zce.me">Email</a></li>
   </ul>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
-
