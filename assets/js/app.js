@@ -1,4 +1,7 @@
 ;(function () {
+  var url = 'https://picsum.photos/' + window.innerWidth + '/' + window.innerHeight + '/?random&blur'
+  document.body.style.backgroundImage = 'url(' + url + ')'
+  
   var logo = document.querySelector('.logo')
   var background = logo.querySelector('#background')
 
