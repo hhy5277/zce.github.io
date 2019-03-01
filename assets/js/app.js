@@ -1,10 +1,7 @@
+/**
+ * Logo color
+ */
 ;(function () {
-  var url = 'https://picsum.photos/' + window.innerWidth + '/' + window.innerHeight + '/?random&blur'
-  document.body.style.backgroundImage = 'url(' + url + ')'
-  
-  var logo = document.querySelector('.logo')
-  var background = logo.querySelector('#background')
-
   var openColors = [
     //  Gray
     [ '#f8f9fa', '#f1f3f5', '#e9ecef', '#dee2e6', '#ced4da', '#adb5bd', '#868e96', '#495057', '#343a40', '#212529' ],
@@ -34,28 +31,47 @@
     [ '#fff4e6', '#ffe8cc', '#ffd8a8', '#ffc078', '#ffa94d', '#ff922b', '#fd7e14', '#f76707', '#e8590c', '#d9480f' ]
   ]
 
+  var logo = document.querySelector('.logo')
+  var color = logo.querySelector('g')
+
   var interval = 2222
   var now = Date.now() / interval
 
-  var color = ~~(now / 10 % 13)
-  var gradation = ~~(now % 10)
+  var change = function (type, level) {
+    console.log('%cOC- %c  %c %c  ',
+      'color: ' + openColors[0][7],
+      'border-radius: 3px; background: ' + openColors[type][7],
+      '',
+      'border-radius: 3px; background: ' + openColors[0][level]
+    )
+    color.setAttribute('fill', openColors[type][level])
+  }
 
-  console.log(
-    '%cOC- %c  %c %c  ',
-    'color: ' + openColors[0][7],
-    'border-radius: 3px; background: ' + openColors[color][7],
-    '',
-    'border-radius: 3px; background: ' + openColors[0][gradation]
-  )
-
-  background.setAttribute('fill', openColors[color][gradation])
+  change(~~(now / 10 % 13), ~~(now % 10))
 
   logo.addEventListener('click', function () {
-    background.setAttribute('fill', openColors[~~(Math.random() * 13)][~~(Math.random() * 10)])
+    change(~~(Math.random() * 13), ~~(Math.random() * 10))
   })
 })()
 
-// baidu analytics
+/**
+ * Background image
+ */
+;(function () {
+  var scale = 1
+  var url = 'https://picsum.photos/' + (window.innerWidth * scale) + '/' + (window.innerHeight * scale) + '/?random&blur'
+  // document.body.style.backgroundImage = 'url(' + url + ')'
+  var background = document.createElement('img')
+  background.className = 'background'
+  background.src = url
+  background.addEventListener('load', function () {
+    document.body.appendChild(background)
+  })
+})()
+
+/**
+ * Analytics
+ */
 ;(function() {
   var hm = document.createElement('script')
   hm.src = 'https://hm.baidu.com/hm.js?655e3d724e78de13d1a583921c7fdc19'
